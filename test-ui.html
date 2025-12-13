@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Test</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/chat.css">
+  <link rel="stylesheet" href="/css/profile.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+    .test-section {
+      margin-bottom: 30px;
+    }
+    .test-section h2 {
+      color: var(--heading);
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="test-section">
+      <h2>Buttons</h2>
+      <button class="btn primary">Primary Button</button>
+      <button class="btn ghost">Ghost Button</button>
+      <button class="btn icon">Icon Button</button>
+    </div>
+
+    <div class="test-section">
+      <h2>Cards</h2>
+      <div class="card">
+        <h3>Test Card</h3>
+        <p>This is a test card with modern styling</p>
+      </div>
+    </div>
+
+    <div class="test-section">
+      <h2>Inputs</h2>
+      <input type="text" class="input" placeholder="Test input">
+      <textarea class="input" placeholder="Test textarea" style="margin-top: 10px;"></textarea>
+    </div>
+
+    <div class="test-section">
+      <h2>Links</h2>
+      <a href="#" class="link">Test Link</a>
+    </div>
+
+    <div class="test-section">
+      <h2>Chat Room</h2>
+      <div class="room">
+        <div class="fallback-avatar">JD</div>
+        <div class="room-body">
+          <div class="room-top">
+            <span class="room-title-text">John Doe</span>
+            <span class="room-type">Direct</span>
+          </div>
+          <div class="room-preview">Hello there!</div>
+        </div>
+        <div class="room-meta">
+          <span class="room-time">2:30 PM</span>
+          <span class="unread-badge">2</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="test-section">
+      <h2>Messages</h2>
+      <div class="msg">
+        <div class="bubble">
+          <div class="message-content">Hello, how are you?</div>
+          <div class="meta">
+            <span class="name">John</span>
+            <span>2:30 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="msg me">
+        <div class="bubble">
+          <div class="message-content">I'm doing great, thanks!</div>
+          <div class="meta">
+            <span>2:31 PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

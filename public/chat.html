@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/chat.css">
+  <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <p class="eyebrow">Messaging</p>
+        <h1>Chats</h1>
+        <p class="subhead">Stay in sync with your people</p>
+      </div>
+      <div class="header-actions">
+        <div class="quick-actions">
+          <button class="btn ghost" id="newChatBtn">New Chat</button>
+          <button class="btn primary" id="newGroupBtn">New Group</button>
+        </div>
+        <div class="profile-actions">
+          <button class="profile-button" id="profileBtn">
+            <img class="user-avatar" id="userAvatar" src="/images/default-avatar.png" alt="Profile">
+            <span>Profile</span>
+          </button>
+          <a class="link" id="logout" href="#">Logout</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="chat">
+      <aside class="sidebar">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Inbox</p>
+            <h3>Conversations</h3>
+          </div>
+          <div class="panel-actions">
+            <button class="btn icon" id="newConv" title="Quick new conversation">＋</button>
+          </div>
+        </div>
+
+        <div class="card stories-card">
+          <div class="card-heading">
+            <div class="title">
+              <p class="eyebrow">Moments</p>
+              <h4>Stories</h4>
+            </div>
+            <div class="card-actions">
+              <button class="btn icon" id="addStory">Add</button>
+              <input type="file" id="storyFile" multiple accept="image/*,video/*" style="display:none">
+            </div>
+          </div>
+          <div id="stories" class="stories"></div>
+        </div>
+
+        <div id="conversations" class="conversation-list"></div>
+      </aside>
+
+      <section class="main">
+        <div class="card room-header">
+          <div>
+            <p class="eyebrow">Now chatting</p>
+            <div class="room-title" id="roomTitle">Select a conversation</div>
+          </div>
+          <div class="room-actions">
+            <button class="btn icon" id="blockBtn" title="Block / Unblock" disabled>Block</button>
+            <div class="typing" id="typing"></div>
+          </div>
+        </div>
+
+        <div class="messages" id="messages"></div>
+
+        <div class="composer" id="composer">
+          <div class="composer-left">
+            <label class="input-label" for="input">Message</label>
+            <textarea id="input" placeholder="Type a message. Enter to send, Shift+Enter for newline"></textarea>
+            <div class="attachments" id="attachments"></div>
+            <div class="drop-hint">Drag & drop files or pick using the clip. Images/videos preview inline. Any file becomes a downloadable link.</div>
+          </div>
+          <div class="composer-actions">
+            <label class="btn icon" for="filePicker">📎 Attach
+              <input type="file" id="filePicker" multiple style="display:none" />
+            </label>
+            <button class="btn primary" id="send">Send</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/socket.js"></script>
+  <script src="/js/ui/chatUI.js"></script>
+  <script src="/js/ui/rooms.js"></script>
+  <script src="/js/ui/composer.js"></script>
+  <script src="/js/ui/profileUI.js"></script>
+  <script src="/js/main/chat.js"></script>
+</body>
+</html>

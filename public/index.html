@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chat App — Single File Frontend (Username shown)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- AUTH CARD (signup/login) -->
+    <div id="authView" class="auth-wrap">
+      <div class="card" role="region" aria-label="Authentication">
+        <div id="authContent"></div>
+      </div>
+    </div>
+
+    <!-- CHAT VIEW -->
+    <div id="chatView" class="chat-wrap" style="display:none" role="application" aria-label="Chat app">
+      <!-- Sidebar -->
+      <aside class="sidebar" aria-label="Sidebar">
+        <div class="header-row">
+          <div class="brand">Messages</div>
+          <button id="themeBtn" class="theme-toggle" title="Toggle theme" style="margin-left:auto">Theme</button>
+        </div>
+        <div class="search"><input id="searchInput" placeholder="Search conversations" /></div>
+        <div class="preview" id="previewRow"></div>
+        <div class="list" id="convList" role="list"></div>
+      </aside>
+
+      <!-- Main Panel -->
+      <main class="panel" role="main">
+        <div class="top">
+          <div class="room-info">
+            <div class="avatar" id="userAvatar">ME</div>
+            <div>
+              <div class="room-title" id="userName">You</div>
+              <div class="room-sub" id="userEmail">user@example.com</div>
+            </div>
+          </div>
+          <div style="margin-left:auto; display:flex; gap:8px; align-items:center">
+            <button id="profileBtn" class="small-btn">Profile</button>
+            <button id="logoutBtn" class="small-btn">Logout</button>
+          </div>
+        </div>
+
+        <div id="messages" class="messages" role="log" aria-live="polite"></div>
+
+        <div class="compose">
+          <input id="msgInput" placeholder="Write a message..." />
+          <input id="fileInput" type="file" class="hide" />
+          <button id="attachBtn" class="file-btn">Attach</button>
+          <button id="sendBtn" class="btn">Send</button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- socket.io client (optional) -->
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
